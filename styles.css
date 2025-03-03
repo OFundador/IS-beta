@@ -1,0 +1,222 @@
+/* General Design & Theme */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #0d1b2a, #1b263b);
+    color: white;
+}
+
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: linear-gradient(135deg, #0d1b2a, #1b263b);
+}
+
+.stars, .nebulae {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.stars {
+    background-image: url('stars.svg');
+    animation: twinkle 10s infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.nebulae {
+    background-image: url('nebulae.svg');
+    animation: float 30s infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Entry Animation */
+.entry-animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panda-somni {
+    width: 100px;
+    height: 100px;
+    background: url('panda-somni.svg') no-repeat center;
+    background-size: contain;
+    animation: pandaFly 5s ease-in-out;
+}
+
+.moon {
+    width: 200px;
+    height: 200px;
+    background: url('moon.svg') no-repeat center;
+    background-size: contain;
+    position: absolute;
+    bottom: 10%;
+}
+
+@keyframes pandaFly {
+    0% { transform: translateX(-100%); }
+    50% { transform: translateY(-50px); }
+    100% { transform: translateX(0) translateY(0); }
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.app-name {
+    font-size: 48px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 10px #fff; }
+    100% { text-shadow: 0 0 20px #0ff; }
+}
+
+.tagline {
+    font-size: 24px;
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+    animation-delay: 2s;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.install-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background: #1b263b;
+    border: none;
+    color: white;
+    cursor: pointer;
+    animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 10px #0ff; }
+    100% { box-shadow: 0 0 20px #0ff; }
+}
+
+.install-button:hover {
+    animation: none;
+    box-shadow: 0 0 20px #0ff;
+}
+
+/* About IterSomni */
+.about {
+    padding: 50px 20px;
+    text-align: center;
+    animation: starConnect 2s forwards;
+}
+
+.section-title {
+    font-size: 32px;
+}
+
+.description {
+    font-size: 18px;
+}
+
+@keyframes starConnect {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* App Features Section */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.feature-card {
+    background: #1b263b;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #0ff;
+}
+
+/* Download Section */
+.download {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.download-button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background: #1b263b;
+    border: none;
+    color: white;
+    cursor: pointer;
+    animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 10px #0ff; }
+    100% { box-shadow: 0 0 20px #0ff; }
+}
+
+.download-button:hover {
+    animation: none;
+    box-shadow: 0 0 20px #0ff;
+}
+
+/* Footer */
+.footer {
+    background: #0d1b2a;
+    padding: 20px;
+    text-align: center;
+}
+
+.store-button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background: #1b263b;
+    border: none;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.store-button:hover {
+    background: #0ff;
+}
